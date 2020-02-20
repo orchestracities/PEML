@@ -21,6 +21,13 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- base-unicode-symbols >= 0.2 && < 1
+- aeson >= 1.4 && < 2
+- aeson-pretty >= 0.8 && < 1
+- bytestring >= 0.10 && < 1
+- containers >= 0.6 && < 1
+- text >= 1.2 && < 2
+- HsYAML >= 0.2 && < 1
 
 library:
   source-dirs: src
