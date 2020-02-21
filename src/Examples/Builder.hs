@@ -53,3 +53,11 @@ x5 = do
     (if "?" == "" then ("z" =: "!") else skip)
     "y" =: False
     (if "?" == "?" then ("w" =: "wada") else skip)
+    maybe skip ("m" =:) $ Just $ do
+      let hv = Nothing :: Maybe String
+      maybe skip ("h" =:) hv
+      maybe skip ("k" =:) $ Just $ Z 3
+      "l" =: do
+        let v = Nothing :: Maybe String
+        maybe skip (-:) v
+        maybe skip (-:) $ Just "I'm in!"
