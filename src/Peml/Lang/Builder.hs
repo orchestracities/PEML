@@ -23,6 +23,7 @@ module Peml.Lang.Builder
   , build
   , (-:)
   , (=:)
+  , skip
   )
 where
 
@@ -123,6 +124,11 @@ build = mapify ∘ toPeml
 
 
 -- combinators
+
+-- | Do-nothing combinator. Handy for adding expressions conditionally
+-- to the building context.
+skip ∷ ExprBuilder
+skip = B (mempty, ())
 
 -- | Append an item to the building context.
 (-:) ∷ ToPeml ξ ⇒ ξ → ExprBuilder

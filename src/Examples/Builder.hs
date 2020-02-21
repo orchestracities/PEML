@@ -3,7 +3,6 @@ module Examples.Builder where
 
 import Peml
 
-
 -- use 'vast' to build and pretty-print expression to 'stdout'.
 print_example ∷ IO ()
 print_example = vast x1
@@ -44,3 +43,13 @@ x4 ∷ ExprBuilder
 x4 = do
   (-:) "xx"
   (-:) Nil  -- no value PEML literal.
+
+x5 ∷ ExprBuilder
+x5 = do
+  (-:) "a"
+  (if "?" == "" then ((-:) "b") else skip)
+  "c" =: do
+    "x" =: Z 5
+    (if "?" == "" then ("z" =: "!") else skip)
+    "y" =: False
+    (if "?" == "?" then ("w" =: "wada") else skip)
